@@ -1,30 +1,24 @@
+import "./styles.css";
+
 const h1 = document.querySelector("h1");
-const backgroundColors = ["#73C8A9", "#a83279", "#0b8793", "#29323c"];
 const body = document.body;​
+const colors = ["#73C8A9", "#a83279", "#0b8793", "#29323c"];
 
-const superEventHandler = {
-  handleEnter: function() {
-    h1.innerText = "I'm here!";
-  },
-  handleLeave: function() {
-    h1.innerText = "Bye";
-  }
-};
-
-h2.addEventListener("mouseenter", superEventHandler.handleEnter);
-h2.addEventListener("mouseleave", superEventHandler.handleLeave);
-
-function handlerReisze() {
-  const handlerReisze = window.innerWidth;
-  if (handlerReisze < 400) {
+function handleReisze {
+  const currentSize = window.innerWidth;
+  if (currentSize < 400) {
+    h1.innerText="Oh, it's too small!";
     body.style.backgroundColor = colors[0];
-  } else if (handlerReisze < 500) {
+  } else if (currentSize < 500) {
+    h1.innerText ="Well..";
     body.style.backgroundColor = colors[1];
-  } else if (handlerReisze < 600) {
+  } else if (currentSize < 600) {
+    h1.innerText ="I like this size!";
     body.style.backgroundColor = colors[2];
   } else {
+    h1.innerText ="Wow, it't too big!";
     body.style.backgroundColor = colors[3];
   }
 }
 
-window.addEventListener("resize", handlerReisze);
+window.addEventListener("resize", handleReisze);
